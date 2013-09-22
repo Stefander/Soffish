@@ -1,0 +1,5 @@
+C:\Users\Stefander\Desktop\portfolio\Se7en\Soffish\bin\Debug\Common.dll
+C:\Users\Stefander\Desktop\portfolio\Se7en\Soffish\bin\Debug\Common.pdb
+C:\Users\Stefander\Desktop\portfolio\Se7en\Soffish\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\Users\Stefander\Desktop\portfolio\Se7en\Soffish\Common\obj\Debug\Common.dll
+C:\Users\Stefander\Desktop\portfolio\Se7en\Soffish\Common\obj\Debug\Common.pdb

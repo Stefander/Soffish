@@ -1,0 +1,27 @@
+SBSP TAG RESEARCH 0x5B0
+-----------------
+0x10 SBSP size (?)
+0x30 unknown
+0x34 stli (?)
+0x60 unknown count 0 
+0x64 unknown count 0 (starts with 0x08F5A6F6 0x4177D7C2)
+0x78 material table count
+0x7C material table offset
+0x84 unknown count 1
+0x88 unknown offset 1 
+0x28C reference to iimz tag (?)
+
+0x34 mat @ 0x2575C884
+Daarna -> chunks met materials?
+
+LBSP TAG RESEARCH
+-----------------
+0x1C 2 identical uints
+0x3C lightmaps (max 0x8)
+	0x0-0xC tagnames
+	0xC	offset
+
+
+MISC RESEARCH
+-------------
+Start of metadata: 0x318 something with external files (0x108 p/item, 3 items)

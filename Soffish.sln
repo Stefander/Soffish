@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Soffish", "Soffish.csproj", "{0D1E3E8C-02AC-4F19-96EC-22A97FAD8259}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapReader", "MapReader\MapReader.csproj", "{CCB20EB4-64EB-4614-B44A-1BB5A77533DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{D1D16389-F42B-49DA-93F2-5FEF0F922805}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D1E3E8C-02AC-4F19-96EC-22A97FAD8259}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D1E3E8C-02AC-4F19-96EC-22A97FAD8259}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D1E3E8C-02AC-4F19-96EC-22A97FAD8259}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D1E3E8C-02AC-4F19-96EC-22A97FAD8259}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCB20EB4-64EB-4614-B44A-1BB5A77533DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCB20EB4-64EB-4614-B44A-1BB5A77533DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCB20EB4-64EB-4614-B44A-1BB5A77533DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCB20EB4-64EB-4614-B44A-1BB5A77533DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1D16389-F42B-49DA-93F2-5FEF0F922805}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1D16389-F42B-49DA-93F2-5FEF0F922805}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1D16389-F42B-49DA-93F2-5FEF0F922805}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1D16389-F42B-49DA-93F2-5FEF0F922805}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

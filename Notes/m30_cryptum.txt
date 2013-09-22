@@ -1,0 +1,102 @@
+XBOX 360: big endian (big value first)
+
+FILE HEADER
+-----------
+struct header (694 bytes)
+{
+0x0	char[4] identifier	head 
+0x4	int mapVersionNumber	12
+0x8	int decomp_length
+0xC	int unknown;		0
+0x10	int indexOffset;	0xBC XX XX XX
+0x14	int metaDataSize;
+0x11C	char[32] buildVersion
+0x13C	int mapTypeIdentifier	0xFFFF (map) 0x40002 (campaign) 0x20000 (mainmenu) 0x30001 (shared)
+0x140	int mapTypeToggle	0x1010100 (map) 0x10100 (campaign) 0x1010000 (menu/cutscene) 0x10000 (shared)
+				0x1000000 contains bsp
+				0x10000	  contains assets
+				0x100	  contains gameplay (?)
+
+// Settings/offsets?
+0x144	5 ints 0x00
+0x168	int unknown;		if(mapTypeToggle == map) 0x6000000 else 0x0
+0x174	long int 0x00
+
+0x18C	char[36] levelName
+0x1B0	char[256] levelTagName
+
+0x2B4	int unknown2;		Same value as unknown3
+0x2B8	int offset0;
+0x2BC	int bspSize;
+0x2C0	int offset1;
+0x2C4	int unknown3;		Same value as unknown2
+0x2C8	int offset2;
+}
+
+struct tag (68 bytes)
+{
+0x0	char[4] mainTagClass;
+0x4	char[4] secondClass;
+0x8	char[4] thirdClass;
+}
+
+struct area (192 bytes)
+{
+0x0	long int;		0
+0x8	char[48] areaName;	Null-terminated string
+0x80	int unknown;		4 (100) 6 (110) 7 (111)
+0xB4	int unknown;		0x3F99999A of 0x3F333333
+}
+
+map header: 0x14-0x18 = index offset (missing last offset)
+
+m80_delta.map index offset:  	0x1EEBA000
+m60_rescue.map index offset: 	0x22673000
+m70_liftoff.map index offset:	0x1209A000
+m05_prologue.map index offset:	0x01805000
+
+m80_delta.map area offset:   0x1CB5B480 (22, 0x1080 bytes)
+m60_rescue.map area offset:  0x21E23E10 (20, 0xF00 bytes)
+m70_liftoff.map area offset: 0x13B32800 (44, 0x2100 bytes)
+m30_cryptum.map area offset: 0x1EE681F0 (7, 0x540 bytes)
+
+m80_delta.map offset:  0x0235EB80
+m60_rescue.map offset: 0x0084F1F0
+m70_liftoff.map offset:0x01A98800
+
+m80_delta.map index:   0x1CB5C4BC
+m60_rescue.map index:  0x21E24CCC
+m30_cryptum.map index: 0x1EE89528
+
+Index (m30_cryptum.map): 0x1EE8956C
+UNKNOWN INDEX (m30_cryptum.map): 0x1EE71464
+
+12 bytes (encoded tag type string?)
+C0 02 3E 62 3F C7 F7 FB 00 00 00 00
+C0 44 04 31 3F C3 51 CA 00 00 00 00
+
+4 bytes 0x00
+
+15 bytes data (offset data, 8 bytes)
+11 bytes data
+
+4 bytes
+00 00 00 0C (12, 1100)
+
+4 bytes
+00 41 00 00 (65, 001000001)
+01 41 00 00 (321,101000001)
+00 42 00 00 (66, 001000010)
+00 44 00 00 (68, 001000100)
+
+4 bytes (ascending through list)
+00 00 00 FF
+..
+00 13 00 FF
+
+int unknown;
+0xFF 0xFF 0x00 0x00
+
+Tag size: 32 bytes
+
+00FFFFFF00

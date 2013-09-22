@@ -1,0 +1,90 @@
+tag index offset (tag table size, tag amount (h), tag amount (d))
+m60_rescue.map:		0x217F97D4 (0x9BB4C, 0x24A3, 9379 tags)
+m05_prologue.map:	0x027297E8 (0x23254, 0x845, 2117 tags)
+m95_epilogue.map:	0x013507E8 (0x429B0, 0xFAC, 4012 tags)
+m10_crash.map:		0x1498E894 (0x6FCB8, 0x1A4E, 6734 tags)
+m90_sacrifice.map:	0x1A428B38 (0x5FE84, 0x1691, 5777 tags)
+
+Rescue string data: 0x22904AF8 (referenced at 0x25B40960)
+
+Index magic:
+m60_rescue index magic:		0x9A033000 (0x219A9458)
+m05_prologue index magic:	0xBC63B000 (0x0275D9AC)
+m95_epilogue index magic:	0xBD9B0000 (0x013A6210)
+m10_crash index magic:		0xA84D1000 (0x14AA52C4)
+m90_sacrifice index magic:	0xA29B1000 (0x1A534154)
+mainmenu index magic:		0xB1BD9000
+m30_cryptum index magic:	0x9DE75000
+m020 index magic:		0x9E78D000
+
+m60_rescue index:		0x21A0A11C
+m05_prologue index:		0x02798408
+mainmenu index:			0x0CAC6424
+m020 index:			0x1E31BD90
+sacrifice index:		0x1A585B08
+
+Index: 4 -> tag index -> (i: 7)
+
+struct indexHeader (0x2C bytes)
+{
+   0x0 	int tag_list_amount;
+   0x4 	int tag_list_offset;
+   0x8 	int object_index_amount;	8 bytes/entry
+   0xC 	int object_index_offset;
+   0x10	int unknown_amount;		8 bytes/entry
+   0x14 int unknown_offset;
+   0x18	int unknown_amount;		8 bytes/entry
+   0x1C int unknown_offset;
+   0x24 int unknown (offset to other file?);
+}
+
+00000014BBE56E10 -> area reference -> in zone_bou_a_fore (zone 0, 0x30) -> 0x22E83204
+00000017BCEB61D4 -> zone reference -> in unknown table -> 0x21EA2960
+
+Meerdere tag lists -> in tagListTable (offset unknown -> needs more research!)
+0x5C -> head tag table -> research struct!
+
+0xCDCDCDCD -> Used by Microsoft's C++ debugging runtime library to mark uninitialised heap memory
+0xCDCDCDCD -> Allocated in heap, but not initialized
+0xCD 	   -> Clean Memory - Allocated memory via malloc or new but never written by the application.
+
+struct tag (0x44 -> 68 bytes)
+{
+   0x0	char[4] mainTagClass;
+   0x4	char[4] secondClass;	
+   0x8	char[4] thirdClass;	
+   0x18 int unknown;
+   0x20 int unknownToggle0;
+   0x24 int offset0;
+   0x28 int unused;		
+   0x2C int unknownToggle1;
+   0x30 int offset1;
+   0x34 int unused;		
+   0x38 int unknownToggle2;
+   0x3C int offset2;
+   0x4  int unused;		
+}
+
+struct area (0xC0 -> 192 bytes)
+{
+   0x0	long int;		0
+   0x8	char[48] areaName;	Null-terminated string
+   0x80	int unknown;		4 (100) 6 (110) 7 (111)
+   0xB4	int unknown;		0x3F99999A of 0x3F333333
+}
+
+TEST BITMAP: 0xBC63B000
+unknownToggle0: 2
+offset0: 270968C
+unknownToggle1: 1
+offset1: 270969C (0x10 -> 16 bytes)
+unknownToggle2: 3
+offset2: 270A740 (0x10A4 -> 4260 bytes)
+
+TEST BITMAP: 0xA84D1000
+unknownToggle0: 4
+offset0: 148AF4CC
+unknownToggle1: 1
+offset1: 148AF4EC (0x20 -> 32 bytes)
+unknownToggle2: 3
+offset2: 148AF4F4 (0x8 -> 8 bytes)
