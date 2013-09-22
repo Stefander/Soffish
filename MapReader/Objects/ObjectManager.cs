@@ -11,10 +11,10 @@ namespace MapReader.Objects
         public ObjectManager(HaloMap map)
         {
             _map = map;
-            _map.LoadListEntries(ObjectList, _map.Tables.ObjectList, LoadObjectListEntry, 8);
+            _map.LoadListEntries(ObjectList, _map.Tables.ObjectList, LoadEntry, 8);
         }
 
-        private void LoadObjectListEntry(ObjectListEntry obj, byte[] entryData)
+        private void LoadEntry(ObjectListEntry obj, byte[] entryData)
         {
             obj.TagId = HaloMap.ReadUint16(entryData, 0);
             obj.TagIndex = HaloMap.ReadUint16(entryData, 2);

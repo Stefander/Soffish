@@ -11,10 +11,10 @@ namespace MapReader.Objects
         public TagManager(HaloMap map)
         {
             _map = map;
-            _map.LoadListEntries(TagList, _map.Tables.TagList, LoadTagListEntry, 16);
+            _map.LoadListEntries(TagList, _map.Tables.TagList, LoadEntry, 16);
         }
 
-        private void LoadTagListEntry(TagListEntry obj, byte[] entryData)
+        private void LoadEntry(TagListEntry obj, byte[] entryData)
         {
             obj.Tags = new Tag[3];
             for (uint j = 0; j < 3; j++)
